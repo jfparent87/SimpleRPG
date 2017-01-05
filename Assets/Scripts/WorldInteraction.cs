@@ -22,9 +22,10 @@ public class WorldInteraction : MonoBehaviour {
         if (Physics.Raycast(interactionRay, out interactionInfo, Mathf.Infinity)) {
             GameObject interactedObject = interactionInfo.collider.gameObject;
             if (interactedObject.tag == "Interactable Object") {
-                Debug.Log("interactable interacted");
+                interactedObject.GetComponent<Interactable>().MoveToInteraction(playerAgent);
             }
             else {
+                playerAgent.stoppingDistance = 0f;
                 playerAgent.destination = interactionInfo.point;
             }
         }

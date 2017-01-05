@@ -25,6 +25,7 @@ public class WorldInteraction : MonoBehaviour {
                 interactedObject.GetComponent<Interactable>().MoveToInteraction(playerAgent);
             }
             else {
+                playerAgent.stoppingDistance = 0f;
                 playerAgent.destination = interactionInfo.point;
             }
         }

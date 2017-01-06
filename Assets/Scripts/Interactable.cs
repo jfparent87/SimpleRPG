@@ -12,7 +12,7 @@ public class Interactable : MonoBehaviour {
     public virtual void MoveToInteraction(NavMeshAgent agent) {
         hasInteracted = false;
         this.playerAgent = agent;
-        playerAgent.stoppingDistance = 2.5f;
+        playerAgent.stoppingDistance = 4f;
         playerAgent.destination = this.transform.position;
     }
 
